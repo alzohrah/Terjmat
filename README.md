@@ -68,7 +68,7 @@ Now, this is Node-RED editer and we need to add Telegram nodes, So select manage
 
 ![`Translator`](images/8.jpg)
 
-At the manage palette menu click on the Install tab then search for telegram. Then install node-red-contrib-telegrambot and close the palette menu.
+At the manage palette menu click on the Install tab then search for telegram. After that, install node-red-contrib-telegrambot and close the palette menu.
 
 ![`Translator`](images/9.png)
 
@@ -78,11 +78,17 @@ Double click on the Telegram receiver node and click on the pencil icon for conf
 ![`Translator`](images/11.png)
 Fill the bot-name and token fields according to the bot credentials you created earlier.
 ![`Translator`](images/12.png)
+
 In Telegram sender node select the bot credentials you created in Telegram receiver node (example_bot in my case).
+
 ![`Translator`](images/13.png)
+
 Now you have configured the Telegram part on Node-RED. You can test it by connecting the Telegram receiver node to the Telegram sender node.
+
 ![`Translator`](images/14.png)
+
 You can send a message to your bot on Telegram and it will echo the message you wrote. That's because we forwarded the message payload directly to the Telegram sender.
+
 <img src="images/15.jpg" width="50%" height="40%" >
 
 
