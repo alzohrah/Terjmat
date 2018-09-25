@@ -37,10 +37,8 @@ Once found, send a /newbot command and follow these instructions:
 *Note: make sure to create all the requirement services this project before goes to next steps.
 
 
-Creating and Configuring Node-RED instance
+to creating and configuring Node-RED app, go to your IBM Cloud account click to Catalog then choice Starter Kits from the lift side then choice Node-RED Starter as shows in the following figure.
 
-
-Go to your IBM Cloud account click to Catalog then choice Starter Kits from the lift side then choice Node-RED Starter as shows in the following figure.
 ![`Translator`](images/3.png)
 
 
