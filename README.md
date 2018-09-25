@@ -1,201 +1,98 @@
 # Terjmat
 
 ## Overview
-The Language Translator service can identify language of a text or provides domain-specific translation between languages. Currently, three domains are available. For best results, a domain that matches the content to be translated should be chosen. The service includes a new Glossary-Based Customization function, which requires the Translator service to be connected via the advanced plan.
+Terjmat is a multi-language translation integrated with Telegram application to make the translation easy by using IBM services. IBM's Language Translator is one of the best language translation service, it has the capability to connect to other IBM's services. Like many other platforms, Language Translator can be linked to Telegram application as well. When you link them, users can use the translation in easy way by text or voice with your bot whenever they want and get a response in seconds. In this guide, we shall go through the steps involved in creating a Node-RED boilerplate available in IBM Cloud and link Telegram to a Telegram as the user interface using Node-RED flows in under 20 minutes by using only IBM Cloud services.
+## Learning objectives
+After completing this project, you will understand how to:
+"    Create a Node-RED flow
+"    Create a translator dialog using Language Translator, Speech to Text, Text to Speech IBM services.
+"    Integrate Node-RED with Telegram as an interface for Terjmat. 
+## Prerequisites
+In order to complete this project, you will need the following prerequisites:
+"    IBM Cloud account - sign up if you don't have an account yet.
+"    Language Translator service
+"    Speech to Text service
+"    Text to Speech service
+"    Node-RED starter
+"    Install Telegram Application on your Mobile Phone.
 
-To get the latest on languages and domains supported please refer the latest documentation [Language Translator Documentation](https://console.bluemix.net/docs/services/language-translator/index.html)
-
-### Prerequisites and setup
-To get the Language Translator service credentials on IBM Cloud automatically filled-in by Node-RED, you should connect the Language Translator service to the Node-RED application in IBM Cloud.
-
-![TranslatorSerivce](images/language_translator_service.png)
-
-Please refer to the [Node-RED setup lab](/introduction_to_node_red/README.md) for instructions.
-
-## Node-RED Watson Language Translator nodes
-The Node-RED ![`Translator`](images/translator-nodes.jpg) nodes provide a set of easy wrapper nodes to
-* translate text within a domain or
-* identify the language of a text
-
-The service will also provide a confidence level of it's result.
-
-## Watson Translator Flow Construction
-In this exercise we have 5 basic flows using the Identify or Translator nodes broken into 3 sections
-1. Translate text
-2. Identify the language
-3. Managing Custom Models
-   * Create a custom model
-   * Get the Status of a model
-   * Delete an existing model
-
+## Estimated time
+"    Creating a bot on Telegram should take less than 5 minutes
+"    Developing the complete application on Node-RED should take a maximum 20 minutes.
+"    Overall the time for completing this project should take approximately 25 minutes.
 ## Building the Translator flow
+Creating a Telegram bot
+After installing Telegram on a mobile phone of your choice, search for "botFather".
+![`Translator`](images/1.jpg)
+Once found, send a /newbot command and follow these instructions:
+"    Set a name
+"    Set a username
+"    Save the access token for future use
+![`Translator`](images/2.jpg)
+-Make sure to create all the requirement services this project before goes to next steps.
 
-![`translator-flow`](images/translator-flow.png)
 
-In this example some text (in English in this case) is injected, translated (to French) and put the result to the Debug tab. Add onto the canvas an inject node, language translator node and debug node. In the following screenshots you can see how the nodes are configured.
+Creating and Configuring Node-RED instance
 
-For the Inject node, in the payload, enter some text. You can use any text for this node. As an example:
-`Hello I am Watson. I am very happy to translate you this message. Have a lovely day. Bye.`
 
-**Tips** : use double quotes for terms you do not want to be translated by Watson.
+Go to your IBM Cloud account click to Catalog then choice Starter Kits from the lift side then choice Node-RED Starter as shows in the following figure.
+![`Translator`](images/3.jpg)
 
-![`tf-inject01`](images/tf-inject01.jpg)
 
-For the language translator node, if you choose to use the example text then set the node parameters to:
-* Mode = Translate
-* Domains = Conversational
-* Source = English
-* Target = French
 
-However if you have chosen text in a different language, or wish to translate into a different language, then edit the `source` and `target`.
+After that, Fill-out the fields to create IoT Platform:
+o    App name: has to be unique in the IBM cloud domain.
+o    Host name: will be filled out automatically based on the App name.
+and click on Create 
+![`Translator`](images/4.jpg)
 
-![`tf-translate`](images/tf-translate.jpg)
+Then, wait some time until shows the application are Running and click on Visit App URL
 
-Edit the debug node. As the translated text will be returned on msg.payload, make sure that you are looking for this in the Debug node.
+![`Translator`](images/5.jpg)
 
-![`tf-debug01`](images/tf-debug01.jpg)
+After that, for first time, it will ask you to setup the username and password. Please follow the instruction to secure your editor so only authorized users can access it. 
 
-This completes the first part of the flow. If you deploy and initiate the inject node, you will see the translation in the debug tab.
+![`Translator`](images/6.jpg)
 
-It is also possible to change the configuration dynamically, as the next steps will show:
+Then, click on "Go to your Node-RED flow editor".
 
-### Dynamic Configuration
+![`Translator`](images/7.jpg)
 
-![`translator-flow`](images/translator-flow.jpg)
+"    Select manage palette from the top right menu.
+![`Translator`](images/8.jpg)
+"    At the manage palette menu click on the Install tab then search for telegram.
+"    Install node-red-contrib-telegrambot. After installation is completed close the palette menu.
+![`Translator`](images/9.jpg)
+Search for telegram nodes from the upper left filter section then drag and drop Telegram receiver and Telegram sender nodes.  
+![`Translator`](images/10.jpg)
+Double click on the Telegram receiver node and click on the pencil icon for configuring your bot credentials
+![`Translator`](images/11.jpg)
+Fill the bot-name and token fields according to the bot credentials you created earlier.
+![`Translator`](images/12.jpg)
+In Telegram sender node select the bot credentials you created in Telegram receiver node (example_bot in my case).
+![`Translator`](images/13.jpg)
+Now you have configured the Telegram part on Node-RED. You can test it by connecting the Telegram receiver node to the Telegram sender node.
+![`Translator`](images/14.jpg)
+You can send a message to your bot on Telegram and it will echo the message you wrote. That's because we forwarded the message payload directly to the Telegram sender.
+![`Translator`](images/15.jpg)
+Now that bot interface is ready, let's start the integration of Watson Assistant service. In the first part there was a Service Details page for the Assistant service. Go to that page and find the Connections tab.
+![`Translator`](images/16.jpg)
+![`Translator`](images/17.jpg)
+![`Translator`](images/18.jpg)
 
-Start by duplicating the original inject node (copy + paste).
+Copy the code form the Terjmat flow file and import them from clipboard into Node-RED:
+- [Building the Terjmat flow] (terjmat-flow.json)
 
-Add a function node and enter the following code:
-```JAVASCRIPT
-msg.srclang = 'en';
-msg.destlang = 'es';
-return msg;
-```
+Then, configure all these nodes; Speech to Text, Text to Speech, Language Translator, and Telegram.
 
-This will translate your text from English to Spanish.
+Finally, your flow should look like the following figure. Click on Deploy button in the upper right
+![`Translator`](images/19.jpg)
 
-![`tf-function`](images/tf-function.jpg)
 
-Link the function node back to the Language Translator node. Deploy and initiate the inject node.
 
-You can also copy the code for the flow [here](translator-flow.json) and import it from clipboard into Node-RED:
 
-## Building the Identify flow
-This example will have 3 inputs with different languages. The language identify flow should look like
+Test your application on Telegram.
+![`Translator`](images/20.jpg)
 
-![`identify-flow`](images/identify-flow.jpg)
-
-### en text inject node
-Add an inject node to the canvas. Double-click the node, then change the name to identify the block. Change the input type to string and add your required text. For example:
-
-> Give me one good reason why I should never make a change
-
-![`if-en-inject`](images/if-en-inject.jpg)
-
-### af text inject node
-Add another inject node to the canvas. Double-click the node, then change the name to identify the block, change the input type to string and add your required text. As an example, Afrikaans text:
-
-> As jy in die bende wil wees, moet jy cool wees, soos pappa!
-
-![`if-af-inject`](images/if-af-inject.jpg)
-
-### it inject node
-Add another inject node to the canvas. Double-click the node, then change the name to identify the block, change the input type to string and add your required text. As an example, Italian text:
-
-> Dovresti solo spegnere le dannate porte!
-
-![`if-it-inject`](images/if-it-inject.jpg)
-
-### Add the Language Identification node
-Drag and drop a Language Identification node from the nodes palette, and wire it to your input node. It does not require any modification.
-
-### Add first debug node
-Drag and drop a debug node from the nodes palette, and wire it to your Language Identification node. Double-click the node, then change the output to msg.lang. This will give you primary language identified.
-
-### Add second debug node
-Drag and drop a debug node from the nodes palette, and wire it to your Language Identification node. Double-click the node, then change the output to msg.languages. This will give you an array of all languages identified in order of the confidence level
-
-![`identify-flow`](images/identify-flow.jpg)
-
-You can also copy the code for the flow [here](identify-flow.json) and import it from the clipboard into Node-RED.
-
---------------------------------------------------------------------------------------------------------------------------------
-## Building flows to customize your domain
-This example will show 3 flows to train a custom domain, get the status of a domain and delete custom models. The custom model flows should look like:
-
-![`custom-models`](images/custom-models.jpg)
-
-**Note**: If you want to do the training part of this lab, then make sure than you select the **Advanced plan** when creating the service. You can use your own data to create a custom dictionary, and a custom translation model in the Watson Language Translator API.
-
-You can find out more about training a custom model and the required TMX file format from the documentation [here](https://console.bluemix.net/docs/services/language-translator/customizing.html).
-
-#### Download a sample TMX file [here](https://raw.githubusercontent.com/watson-developer-cloud/node-red-labs/master/utilities/box_setup/glossary.tmx).
-
-### Flow 1 - Create a model
-Drag and drop an inject node on your palette, this node won't need any configuration as it is just here to start the flow. However, it is useful to name it `Create`.
-
-#### Add a Dropbox node
-**Note:** If you haven't done it yet, set up the Dropbox node as shown [here](https://github.com/watson-developer-cloud/node-red-labs/tree/master/utilities/dropbox_setup).
-
-Once you have completed the Dropbox Setup guide, enter your credentials and the name of your TMX file (or path to your file if it's in a subfolder) in the node. your node configuration should look something like this:
-
-![`cm-dropbox-complete`](images/cm-dropbox-complete.jpg)
-
-#### Add a Language Translator node
-To get the file from the Dropbox node and send it to the service. This node should be configured like so:
-* Mode = Train
-* Base Model = English to French
-* File type = Forced Glossary
-
-![`cm-train`](images/cm-train.jpg)
-
-#### Add debug node
-Drag and drop a debug node and set the output to msg.payload. This will show the model_id of the new file that has been created. You will need this if you want use the model elsewhere.
-
-Deploy the application and initiate the flow. In the debug tab, make a note of the ID as you will need it in the next step.
-
-### Flow 2 - Get the status of a model
-**Note:** In order to get the status of a model you've sent for training, you'll need to provide its ID. This was output from the Training flow (previous step).
-
-Drag and drop an inject node on your palette, this node won't need any configuration it is just here to start the flow. However it is useful to name it `Status`.
-
-#### Add a Language Translator node
-This node should be configured like so:
-* Mode = Get Status
-* Model ID = use the model-id from the training flow
-
-![`cm-status`](images/cm-status.jpg)
-
-#### Add debug node
-Drag and drop a debug node and set it to msg.payload. This will give you the status of the model, it can be either:
-
- - training - Training is still in progress.
- - queued@<#> - Training has not yet started and the model is in the queue. The # indicates the number of your model in the queue.
- - error - Training did not complete because of an error.
- - available - Training is completed, and the service is now available to use with your custom translation model.
-
-### Flow 3 - Delete a model
-**Note:** In order to get the status of a model you've sent for training, you'll need to provide its ID. This was output from the Training flow that you should have noted.
-
-Drag and drop an inject node on your palette, this node won't need any configuration, it is just here to start the flow. Again, it is useful to name it `Delete`.
-
-#### Add a Language Translator node
-This node should be configured
-* Mode = Delete
-* Model ID = use the model-id from the training flow
-
-![`cm-delete`](images/cm-delete.jpg)
-
-#### Add debug node
-Drag and drop a debug node and let it set to msg.payload. This will only return an error if the model couldn't be deleted (modelid not found).
-
-### Available Flows
-You can also copy the code for the flows here and import them from clipboard into Node-RED:
-- [Building the Translator flow](translator-flow.json)
-- [Building the Identify flow](identify-flow.json)
-- [Building flows to customize your domain](training-flow.json)
-
-## Language Translator Documentation
-To find more information on the Watson Language Translator underlying service, visit these webpages:
-- [Language Translator Documentation](https://console.bluemix.net/docs/services/language-translator/index.html)
-- [Language Translator API Documentation](https://www.ibm.com/watson/developercloud/language-translator/api/v2)
+## Summary
+Node-RED can make things easier. In this project, you have created a translator with a Telegram interface. This is sample and basic, and it can be modified and enhanced in respect to your needs.
