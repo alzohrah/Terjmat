@@ -25,6 +25,7 @@ In order to complete this project, you will need the following prerequisites:
 Creating a Telegram bot
 After installing Telegram on a mobile phone of your choice, search for "botFather".
 ![`Translator`](images/1.jpg)
+
 Once found, send a /newbot command and follow these instructions:
 - Set a name
 - Set a username
@@ -33,7 +34,7 @@ Once found, send a /newbot command and follow these instructions:
 <img src="images/2.jpg" width="50%" height="50%" display: block margin-left: auto margin-right: auto>
 
 
--Make sure to create all the requirement services this project before goes to next steps.
+*Note: make sure to create all the requirement services this project before goes to next steps.
 
 
 Creating and Configuring Node-RED instance
@@ -81,9 +82,15 @@ Now you have configured the Telegram part on Node-RED. You can test it by connec
 You can send a message to your bot on Telegram and it will echo the message you wrote. That's because we forwarded the message payload directly to the Telegram sender.
 <img src="images/15.jpg" width="50%" height="40%" >
 
-Now that bot interface is ready, let's start the integration of Watson Assistant service. In the first part there was a Service Details page for the Assistant service. Go to that page and find the Connections tab.
+
+Now the bot interface is connected to Node-RED and ready to use, let’s start integrating all the services with Npde-RED application. Go to the Node-RED application in IBM Cloud and click on the Connections tab on the lift side. Then click on Create connection
 ![`Translator`](images/16.png)
+
+You will find all the application that you have created connect all the services that needed.
 ![`Translator`](images/17.png)
+
+After that, restage the app to configure the new changes.
+
 ![`Translator`](images/18.png)
 
 Copy the code form the Terjmat flow file and import them from clipboard into Node-RED:
