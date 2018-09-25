@@ -64,11 +64,14 @@ Then, click on "Go to your Node-RED flow editor".
 
 ![`Translator`](images/7.png)
 
-"    Select manage palette from the top right menu.
+Now, this is Node-RED editer and we need to add Telegram nodes, So select manage palette from the top right menu.
+
 ![`Translator`](images/8.jpg)
-"    At the manage palette menu click on the Install tab then search for telegram.
-"    Install node-red-contrib-telegrambot. After installation is completed close the palette menu.
+
+At the manage palette menu click on the Install tab then search for telegram. Then install node-red-contrib-telegrambot and close the palette menu.
+
 ![`Translator`](images/9.png)
+
 Search for telegram nodes from the upper left filter section then drag and drop Telegram receiver and Telegram sender nodes.  
 ![`Translator`](images/10.png)
 Double click on the Telegram receiver node and click on the pencil icon for configuring your bot credentials
