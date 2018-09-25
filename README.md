@@ -27,8 +27,11 @@ After installing Telegram on a mobile phone of your choice, search for "botFathe
 ![`Translator`](images/1.jpg)
 Once found, send a /newbot command and follow these instructions:
 "    Set a name
+
 "    Set a username
+
 "    Save the access token for future use
+
 <img src="images/2.jpg" width="50%" height="50%" display: block margin-left: auto margin-right: auto>
 
 
