@@ -1,5 +1,6 @@
 # Terjmat
 
+
 ## Overview
 Terjmat is a multi-language translation integrated with Telegram application to make the translation easy by using IBM services. IBM's Language Translator is one of the best language translation service, it has the capability to connect to other IBM's services. Like many other platforms, Language Translator can be linked to Telegram application as well. When you link them, users can use the translation in easy way by text or voice with your bot whenever they want and get a response in seconds. In this guide, we shall go through the steps involved in creating a Node-RED boilerplate available in IBM Cloud and link Telegram to a Telegram as the user interface using Node-RED flows in under 20 minutes by using only IBM Cloud services.
 ## Learning objectives
@@ -28,7 +29,8 @@ Once found, send a /newbot command and follow these instructions:
 "    Set a name
 "    Set a username
 "    Save the access token for future use
-![`Translator`](images/2.jpg | width=100)
+<img src="images/2.jpg" width="50%" height="50%">
+
 
 -Make sure to create all the requirement services this project before goes to next steps.
 
