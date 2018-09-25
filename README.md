@@ -5,32 +5,30 @@
 Terjmat is a multi-language translation integrated with Telegram application to make the translation easy by using IBM services. IBM's Language Translator is one of the best language translation service, it has the capability to connect to other IBM's services. Like many other platforms, Language Translator can be linked to Telegram application as well. When you link them, users can use the translation in easy way by text or voice with your bot whenever they want and get a response in seconds. In this guide, we shall go through the steps involved in creating a Node-RED boilerplate available in IBM Cloud and link Telegram to a Telegram as the user interface using Node-RED flows in under 20 minutes by using only IBM Cloud services.
 ## Learning objectives
 After completing this project, you will understand how to:
-"    Create a Node-RED flow
-"    Create a translator dialog using Language Translator, Speech to Text, Text to Speech IBM services.
-"    Integrate Node-RED with Telegram as an interface for Terjmat. 
+- Create a Node-RED flow
+- Create a translator dialog using Language Translator, Speech to Text, Text to Speech IBM services.
+- Integrate Node-RED with Telegram as an interface for Terjmat. 
 ## Prerequisites
 In order to complete this project, you will need the following prerequisites:
-"    IBM Cloud account - sign up if you don't have an account yet.
-"    Language Translator service
-"    Speech to Text service
-"    Text to Speech service
-"    Node-RED starter
-"    Install Telegram Application on your Mobile Phone.
+- IBM Cloud account - sign up if you don't have an account yet.
+- Language Translator service
+- Speech to Text service
+- Text to Speech service
+- Node-RED starter
+- Install Telegram Application on your Mobile Phone.
 
 ## Estimated time
-"    Creating a bot on Telegram should take less than 5 minutes
-"    Developing the complete application on Node-RED should take a maximum 20 minutes.
-"    Overall the time for completing this project should take approximately 25 minutes.
+- Creating a bot on Telegram should take less than 5 minutes
+- Developing the complete application on Node-RED should take a maximum 20 minutes.
+- Overall the time for completing this project should take approximately 25 minutes.
 ## Building the Translator flow
 Creating a Telegram bot
 After installing Telegram on a mobile phone of your choice, search for "botFather".
 ![`Translator`](images/1.jpg)
 Once found, send a /newbot command and follow these instructions:
-"    Set a name
-
-"    Set a username
-
-"    Save the access token for future use
+- Set a name
+- Set a username
+- Save the access token for future use
 
 <img src="images/2.jpg" width="50%" height="50%" display: block margin-left: auto margin-right: auto>
 
@@ -47,9 +45,10 @@ Go to your IBM Cloud account click to Catalog then choice Starter Kits from the 
 
 
 After that, Fill-out the fields to create IoT Platform:
-o    App name: has to be unique in the IBM cloud domain.
-o    Host name: will be filled out automatically based on the App name.
-and click on Create 
+- App name: has to be unique in the IBM cloud domain.
+- Host name: will be filled out automatically based on the App name.
+
+click on Create 
 ![`Translator`](images/4.png)
 
 Then, wait some time until shows the application are Running and click on Visit App URL
@@ -58,7 +57,7 @@ Then, wait some time until shows the application are Running and click on Visit 
 
 After that, for first time, it will ask you to setup the username and password. Please follow the instruction to secure your editor so only authorized users can access it. 
 
-![`Translator`](images/6.png)
+<img src="images/6.png" width="50%" height="40%" >
 
 Then, click on "Go to your Node-RED flow editor".
 
