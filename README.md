@@ -96,6 +96,7 @@ Finally, your flow should look like the following figure. Click on Deploy button
 
 
 Test your application on Telegram.
+
 <img src="images/15.jpg" width="50%" height="40%" >
 
 ## Summary
