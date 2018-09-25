@@ -39,7 +39,7 @@ Creating and Configuring Node-RED instance
 
 
 Go to your IBM Cloud account click to Catalog then choice Starter Kits from the lift side then choice Node-RED Starter as shows in the following figure.
-![`Translator`](images/3.jpg)
+![`Translator`](images/3.png)
 
 
 
@@ -47,41 +47,41 @@ After that, Fill-out the fields to create IoT Platform:
 o    App name: has to be unique in the IBM cloud domain.
 o    Host name: will be filled out automatically based on the App name.
 and click on Create 
-![`Translator`](images/4.jpg)
+![`Translator`](images/4.png)
 
 Then, wait some time until shows the application are Running and click on Visit App URL
 
-![`Translator`](images/5.jpg)
+![`Translator`](images/5.png)
 
 After that, for first time, it will ask you to setup the username and password. Please follow the instruction to secure your editor so only authorized users can access it. 
 
-![`Translator`](images/6.jpg)
+![`Translator`](images/6.png)
 
 Then, click on "Go to your Node-RED flow editor".
 
-![`Translator`](images/7.jpg)
+![`Translator`](images/7.png)
 
 "    Select manage palette from the top right menu.
 ![`Translator`](images/8.jpg)
 "    At the manage palette menu click on the Install tab then search for telegram.
 "    Install node-red-contrib-telegrambot. After installation is completed close the palette menu.
-![`Translator`](images/9.jpg)
+![`Translator`](images/9.png)
 Search for telegram nodes from the upper left filter section then drag and drop Telegram receiver and Telegram sender nodes.  
-![`Translator`](images/10.jpg)
+![`Translator`](images/10.png)
 Double click on the Telegram receiver node and click on the pencil icon for configuring your bot credentials
-![`Translator`](images/11.jpg)
+![`Translator`](images/11.png)
 Fill the bot-name and token fields according to the bot credentials you created earlier.
-![`Translator`](images/12.jpg)
+![`Translator`](images/12.png)
 In Telegram sender node select the bot credentials you created in Telegram receiver node (example_bot in my case).
-![`Translator`](images/13.jpg)
+![`Translator`](images/13.png)
 Now you have configured the Telegram part on Node-RED. You can test it by connecting the Telegram receiver node to the Telegram sender node.
-![`Translator`](images/14.jpg)
+![`Translator`](images/14.png)
 You can send a message to your bot on Telegram and it will echo the message you wrote. That's because we forwarded the message payload directly to the Telegram sender.
 ![`Translator`](images/15.jpg)
 Now that bot interface is ready, let's start the integration of Watson Assistant service. In the first part there was a Service Details page for the Assistant service. Go to that page and find the Connections tab.
-![`Translator`](images/16.jpg)
-![`Translator`](images/17.jpg)
-![`Translator`](images/18.jpg)
+![`Translator`](images/16.png)
+![`Translator`](images/17.png)
+![`Translator`](images/18.png)
 
 Copy the code form the Terjmat flow file and import them from clipboard into Node-RED:
 - [Building the Terjmat flow] (terjmat-flow.json)
@@ -89,7 +89,7 @@ Copy the code form the Terjmat flow file and import them from clipboard into Nod
 Then, configure all these nodes; Speech to Text, Text to Speech, Language Translator, and Telegram.
 
 Finally, your flow should look like the following figure. Click on Deploy button in the upper right
-![`Translator`](images/19.jpg)
+![`Translator`](images/19.png)
 
 
 
