@@ -29,7 +29,7 @@ Once found, send a /newbot command and follow these instructions:
 "    Set a name
 "    Set a username
 "    Save the access token for future use
-<img src="images/2.jpg" width="50%" height="50%">
+<img src="images/2.jpg" width="50%" height="50%" display: block margin-left: auto margin-right: auto>
 
 
 -Make sure to create all the requirement services this project before goes to next steps.
@@ -77,7 +77,8 @@ In Telegram sender node select the bot credentials you created in Telegram recei
 Now you have configured the Telegram part on Node-RED. You can test it by connecting the Telegram receiver node to the Telegram sender node.
 ![`Translator`](images/14.png)
 You can send a message to your bot on Telegram and it will echo the message you wrote. That's because we forwarded the message payload directly to the Telegram sender.
-![`Translator`](images/15.jpg)
+<img src="images/15.jpg" width="50%" height="40%" >
+
 Now that bot interface is ready, let's start the integration of Watson Assistant service. In the first part there was a Service Details page for the Assistant service. Go to that page and find the Connections tab.
 ![`Translator`](images/16.png)
 ![`Translator`](images/17.png)
@@ -95,7 +96,7 @@ Finally, your flow should look like the following figure. Click on Deploy button
 
 
 Test your application on Telegram.
-![`Translator`](images/20.jpg)
+<img src="images/15.jpg" width="50%" height="40%" >
 
 ## Summary
 Node-RED can make things easier. In this project, you have created a translator with a Telegram interface. This is sample and basic, and it can be modified and enhanced in respect to your needs.
