@@ -28,7 +28,8 @@ Once found, send a /newbot command and follow these instructions:
 "    Set a name
 "    Set a username
 "    Save the access token for future use
-![`Translator`](images/2.jpg)
+![`Translator`](images/2.jpg | width=100)
+
 -Make sure to create all the requirement services this project before goes to next steps.
 
 
