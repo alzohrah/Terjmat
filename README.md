@@ -62,7 +62,8 @@ Then, click on "Go to your Node-RED flow editor".
 
 ![`Translator`](images/7.png)
 
-Now, this is Node-RED editer and we need to add Telegram nodes, So select manage palette from the top right menu.
+### Configure the Telegram 
+Now, this is Node-RED editer and we need to add Telegram nodes, so select manage palette from the top right menu.
 
 ![`Translator`](images/8.jpg)
 
@@ -73,8 +74,11 @@ At the manage palette menu click on the Install tab then search for telegram. Af
 Search for telegram nodes from the upper left filter section then drag and drop Telegram receiver and Telegram sender nodes.  
 ![`Translator`](images/10.png)
 Double click on the Telegram receiver node and click on the pencil icon for configuring your bot credentials
+
 ![`Translator`](images/11.png)
+
 Fill the bot-name and token fields according to the bot credentials you created earlier.
+
 ![`Translator`](images/12.png)
 
 In Telegram sender node select the bot credentials you created in Telegram receiver node (example_bot in my case).
@@ -89,6 +93,7 @@ You can send a message to your bot on Telegram and it will echo the message you 
 
 <img src="images/15.jpg" width="50%" height="40%" >
 
+### Connecting IBM's services
 
 Now the bot interface is connected to Node-RED and ready to use, let’s start integrating all the services with Npde-RED application. Go to the Node-RED application in IBM Cloud and click on the Connections tab on the lift side. Then click on Create connection
 ![`Translator`](images/16.png)
@@ -111,7 +116,7 @@ Finally, your flow should look like the following figure. Click on Deploy button
 
 
 
-Test your application on Telegram.
+### Testing your application on Telegram.
 
 <img src="images/15.jpg" width="50%" height="40%" >
 
