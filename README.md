@@ -22,7 +22,7 @@ In order to complete this project, you will need the following prerequisites:
 - Developing the complete application on Node-RED should take a maximum 20 minutes.
 - Overall the time for completing this project should take approximately 25 minutes.
 ## Building the Translator flow
-Creating a Telegram bot
+### Creating a Telegram bot
 After installing Telegram on a mobile phone of your choice, search for "botFather".
 ![`Translator`](images/1.jpg)
 
@@ -36,8 +36,8 @@ Once found, send a /newbot command and follow these instructions:
 
 *Note: make sure to create all the requirement services this project before goes to next steps.
 
-
-to creating and configuring Node-RED app, go to your IBM Cloud account click to Catalog then choice Starter Kits from the lift side then choice Node-RED Starter as shows in the following figure.
+### Creating Node-RED
+To creating and configuring Node-RED app, go to your IBM Cloud account click to Catalog then choice Starter Kits from the lift side then choice Node-RED Starter as shows in the following figure.
 
 ![`Translator`](images/3.png)
 
