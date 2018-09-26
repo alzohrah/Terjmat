@@ -106,7 +106,9 @@ After that, restage the app to configure the new changes.
 ![`Translator`](images/18.png)
 
 Copy the code form the Terjmat flow file and import them from clipboard into Node-RED:
-- [Building the Terjmat flow] (#terjmat-flow.json)
+
+
+- [Building the Terjmat flow](terjmat-flow.json)
 
 Then, configure all these nodes; Speech to Text, Text to Speech, Language Translator, and Telegram.
 
