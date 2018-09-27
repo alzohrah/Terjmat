@@ -2,7 +2,7 @@
 
 
 ## Overview
-Terjmat is a multi-language translation integrated with Telegram application to make the translation easy by using IBM services. IBM's Language Translator is one of the best language translation service, it has the capability to connect to other IBM's services. These services can be linked to Telegram application by using Node-RED app. When you link them, users can use the translation in easy way by send text or voice to your bot. In this guide, we shall go through the steps involved in creating a Node-RED boilerplate available in IBM Cloud and link Telegram to a Telegram as the user interface using Node-RED flows in under 20 minutes by using only IBM Cloud services.
+Terjmat is a multi-language translation service integrated with Telegram application to make the translation easy by using IBM services. IBM's Language Translator is one of the best language translation service, it has the capability to connect to other IBM's services. These services can be linked to Telegram application using Node-RED app. When you link them, users can use the translation in an easy way by sending text or voice to your bot. In this guide, we shall go through the steps involved in creating a Node-RED boilerplate available in IBM Cloud and link Terjmat to a Telegram as the user interface using Node-RED flows in under 20 minutes by using only IBM Cloud services.
 ## Learning objectives
 After completing this project, you will understand how to;
 - [Create a Node-RED flow](#creating-node-red)
@@ -38,7 +38,7 @@ Once found, send a /newbot command and follow these instructions:
 *Note: make sure to create all the requirement services this project before goes to next steps.
 
 ### Creating Node-RED
-To creating and configuring Node-RED app, go to your IBM Cloud account click to Catalog then choice Starter Kits from the lift side then choice Node-RED Starter as shows in the following figure.
+To create and configur Node-RED app, go to your IBM Cloud account and click Catalog then choice Starter Kits from the lift side then choice Node-RED Starter as shown in the following figure.
 
 ![`Translator`](images/3.png)
 
@@ -51,7 +51,7 @@ After that, Fill-out the fields to create IoT Platform:
 click on Create 
 ![`Translator`](images/4.png)
 
-Then, wait some time until shows the application are Running and click on Visit App URL
+Then, wait seconds until shows the application shows Running and click on Visit App URL
 
 ![`Translator`](images/5.png)
 
