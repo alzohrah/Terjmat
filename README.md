@@ -11,11 +11,12 @@ After completing this project, you will understand how to;
 - [Integrate Node-RED with Telegram as an interface for Terjmat](#configure-the-telegram)
 ## Prerequisites
 In order to complete this project, you will need the following prerequisites:
-- IBM Cloud account - sign up if you don't have an account yet.
-- Language Translator service
-- Speech to Text service
-- Text to Speech service
-- Node-RED starter
+- [IBM Cloud](https://www.ibm.com/cloud/) account - sign up if you don't have an account yet.
+- [Language Translator](https://github.com/watson-developer-cloud/node-red-labs/blob/master/basic_examples/language_translator/README.md) service
+- [Language Identification](https://github.com/watson-developer-cloud/node-red-labs/blob/master/basic_examples/language_identification/README.md) service
+- [Speech to Text](https://github.com/watson-developer-cloud/node-red-labs/blob/master/basic_examples/speech_to_text/README.md) service
+- [Text to Speech](https://github.com/watson-developer-cloud/node-red-labs/blob/master/basic_examples/text_to_speech/README.md) service
+- [Node-RED starter](https://console.bluemix.net/catalog/starters/node-red-starter)
 - Install Telegram Application on your Mobile Phone.
 
 ## Estimated time
