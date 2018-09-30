@@ -123,7 +123,7 @@ Finally, your flow should look like the following figure. Click on Deploy button
 
 ### Testing your application on Telegram.
 
-<img src="images/15.jpg" width="50%" height="40%" >
+<img src="images/20.jpg" width="50%" height="40%" >
 
 ## Summary
 Node-RED can make things easier. In this project, you have created a translator with a Telegram interface. This is sample and basic, and it can be modified and enhanced in respect to your needs.
